@@ -1,0 +1,26 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432
+    username: postgres
+    password: root
+    pool-size: 30
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/dev_profiles_db
+    user: postgres
+    password: root
+    check-location: true
+    locations: migration
+    validate-on-migrate: true
+    sql-migration-separator: __
+    sql-migration-prefix: V
+    sql-migration
